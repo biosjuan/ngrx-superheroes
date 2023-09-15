@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SuperherosEntityService } from './services/superheros-entity.service';
+import { SuperheroesEntityService } from './services/superheroes-entity.service';
 import { Observable } from 'rxjs';
 import { Superhero } from './models';
 
@@ -12,9 +12,8 @@ import { Superhero } from './models';
 export class SuperherosComponent implements OnInit {
   superheros$: Observable<Superhero[]>;
 
-  constructor(private superherosEntityService: SuperherosEntityService) {}
+  constructor(private superherosEntityService: SuperheroesEntityService) {}
   ngOnInit(): void {
     this.superheros$ = this.superherosEntityService.entities$;
-    console.log('oninit');
   }
 }

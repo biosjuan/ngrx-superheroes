@@ -4,12 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './superheros/entity-metadata';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 

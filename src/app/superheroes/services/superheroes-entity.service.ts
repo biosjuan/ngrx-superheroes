@@ -6,7 +6,7 @@ import {
 import { Superhero } from '../models';
 
 @Injectable()
-export class SuperherosEntityService extends EntityCollectionServiceBase<Superhero> {
+export class SuperheroesEntityService extends EntityCollectionServiceBase<Superhero> {
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('Superhero', serviceElementsFactory);
   }

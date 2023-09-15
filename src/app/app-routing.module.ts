@@ -5,7 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./superheros/superheros.module').then((m) => m.SuperherosModule),
+      import('./superheroes/superheroes.module').then(
+        (m) => m.SuperherosModule
+      ),
   },
   {
     path: '**',

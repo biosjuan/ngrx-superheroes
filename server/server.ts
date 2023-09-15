@@ -12,7 +12,7 @@ app.use(cors({ origin: true }));
 
 app.use(bodyParser.json());
 
-app.route('/api/superheroes').get(getAllHeros);
+app.route('/nc/superheroes').get(getAllHeros);
 
 const httpServer: any = app.listen(3001, () => {
   console.log(
