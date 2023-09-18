@@ -1,5 +1,5 @@
 <app-superhero-list
   [superheroes]="superheros$ | async"
+  [superheroPowersInput]="superheroPowers$ | async"
   (getPowers)="getPowers($event)"
 ></app-superhero-list>
-{{ powers$ | async | json }}

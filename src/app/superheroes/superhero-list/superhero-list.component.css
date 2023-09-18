@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.collapsed-detail {
+  display: none;
+}
+
 /* Optional: Adjust the table styles as needed */
 mat-table {
   width: 80%;

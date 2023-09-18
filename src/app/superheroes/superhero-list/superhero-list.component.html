@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <div class="table-container">
-      <mat-table [dataSource]="dataSource">
+      <mat-table [dataSource]="dataSource" multiTemplateDataRows>
         <!-- Column Definitions -->
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
@@ -27,15 +27,32 @@
         <ng-container matColumnDef="powers">
           <mat-header-cell *matHeaderCellDef> Powers </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <button (click)="onGetPowers(element.powers)" mat-icon-button>
+            <button
+              (click)="onGetPowers(element.powers, element.id)"
+              mat-icon-button
+            >
               <mat-icon>bolt</mat-icon>
             </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+          <mat-cell mat-cell *matCellDef="let element" colspan="4">
+            <span *ngIf="superheroPowers.length > 0"
+              >⚫ {{ superheroPowers.join(". ⚫ ") }}.</span
+            >
           </mat-cell>
         </ng-container>
 
         <!-- Table Rows -->
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        <mat-row
+          mat-row
+          *matRowDef="let element; columns: ['expandedDetail']"
+          [class.collapsed-detail]="element.id !== superheroId"
+        ></mat-row>
       </mat-table>
     </div>
   </mat-card-content>

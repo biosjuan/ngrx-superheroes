@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { Superhero } from '../models';
+import { Superhero, SuperheroPower } from '../models';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -16,13 +16,21 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class SuperheroListComponent {
   dataSource = new MatTableDataSource<Superhero>([]);
+  superheroPowers: string[];
+  superheroId: number;
   @Input() set superheroes(value: Superhero[] | null) {
     this.dataSource.data = value ?? [];
   }
+
+  @Input() set superheroPowersInput(value: SuperheroPower[] | null) {
+    this.superheroPowers = value ? value.map((sp) => sp.name) : [];
+  }
+
   @Output() getPowers = new EventEmitter<number[]>();
   displayedColumns: string[] = ['name', 'alias', 'team', 'universe', 'powers'];
 
-  onGetPowers(powers: number[]): void {
+  onGetPowers(powers: number[], id: number): void {
     this.getPowers.emit(powers);
+    this.superheroId = id;
   }
 }

@@ -5,4 +5,5 @@
   <button mat-button>Contact</button>
   <!-- Add more menu items as needed -->
 </mat-toolbar>
+<spinner *ngIf="loading$ | async"></spinner>
 <router-outlet></router-outlet>

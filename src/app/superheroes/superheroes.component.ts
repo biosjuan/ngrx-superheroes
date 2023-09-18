@@ -13,7 +13,7 @@ import { QueryParams } from '@ngrx/data';
 })
 export class SuperherosComponent implements OnInit {
   superheros$: Observable<Superhero[]>;
-  powers$: Observable<SuperheroPower[]>;
+  superheroPowers$: Observable<SuperheroPower[]>;
 
   constructor(
     private superherosEntityService: SuperheroesEntityService,
@@ -25,7 +25,7 @@ export class SuperherosComponent implements OnInit {
 
   getPowers(powersIds: number[]): void {
     const powerIdsQueryParam = powersIds.join(',');
-    this.powers$ = this.superheroPowerEntityService.getWithQuery({
+    this.superheroPowers$ = this.superheroPowerEntityService.getWithQuery({
       powerIds: powerIdsQueryParam,
     });
   }
