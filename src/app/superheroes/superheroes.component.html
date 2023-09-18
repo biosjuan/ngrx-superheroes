@@ -1,2 +1,5 @@
-<h1>superheros works!</h1>
-<div>{{ superheros$ | async | json }}</div>
+<app-superhero-list
+  [superheroes]="superheros$ | async"
+  (getPowers)="getPowers($event)"
+></app-superhero-list>
+{{ powers$ | async | json }}

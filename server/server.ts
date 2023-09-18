@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Application } from 'express';
 import { getAllHeros } from './get-courses.route';
+import { getPower } from './get-power';
 
 const bodyParser = require('body-parser');
 
@@ -13,6 +14,7 @@ app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 
 app.route('/nc/superheroes').get(getAllHeros);
+app.route('/api/superheropower/:powerIds').get(getPower);
 
 const httpServer: any = app.listen(3001, () => {
   console.log(

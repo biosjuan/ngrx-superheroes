@@ -1,0 +1,28 @@
+.table-container {
+  display: grid;
+  place-items: center;
+}
+
+.center-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional: Adjust the table styles as needed */
+mat-table {
+  width: 80%;
+  max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+mat-card {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: 2rem auto; /* Adjust margins for positioning */
+}
+
+@media screen and (max-width: 600px) {
+  /* Styles for screens with a max-width of 600px (typical mobile screens) */
+  .mat-card {
+    max-width: 90%;
+  }
+}

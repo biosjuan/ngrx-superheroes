@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MaterialModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

@@ -9,6 +9,9 @@ const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
     },
   },
+  SuperheroPower: {
+    entityName: 'SuperheroPower',
+  },
 };
 
 const pluralNames = {

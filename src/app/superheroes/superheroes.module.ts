@@ -7,6 +7,9 @@ import { EntityDataModule, EntityDataService } from '@ngrx/data';
 import { superherosResolver } from './services/superheroes.resolvers';
 import { entityConfig } from './entity-metadata';
 import { SuperheroesDataService } from './services/superheroes-data.service';
+import { SuperheroListComponent } from './superhero-list/superhero-list.component';
+import { MaterialModule } from '../material/material.module';
+import { SuperheroPowerEntityService } from './services/superhero-power-entity.service';
 
 export const superherosRoutes: Routes = [
   {
@@ -17,13 +20,18 @@ export const superherosRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SuperherosComponent],
+  declarations: [SuperherosComponent, SuperheroListComponent],
   imports: [
     CommonModule,
+    MaterialModule,
     RouterModule.forChild(superherosRoutes),
     EntityDataModule.forRoot(entityConfig),
   ],
-  providers: [SuperheroesEntityService, SuperheroesDataService],
+  providers: [
+    SuperheroesEntityService,
+    SuperheroesDataService,
+    SuperheroPowerEntityService,
+  ],
 })
 export class SuperherosModule {
   constructor(
