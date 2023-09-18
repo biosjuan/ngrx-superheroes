@@ -1,5 +1,5 @@
 import { EntityMetadataMap, EntityDataModuleConfig } from '@ngrx/data';
-import { Superhero } from './models';
+import { Superhero, SuperheroPower } from './models';
 
 const entityMetadata: EntityMetadataMap = {
   Superhero: {
@@ -11,6 +11,7 @@ const entityMetadata: EntityMetadataMap = {
   },
   SuperheroPower: {
     entityName: 'SuperheroPower',
+    selectId: (superheroPower: SuperheroPower) => superheroPower.powerId,
   },
 };
 

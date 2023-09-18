@@ -8,7 +8,7 @@ import { Superhero } from '../models';
 @Injectable()
 export class SuperheroesDataService extends DefaultDataService<Superhero> {
   constructor(http: HttpClient, httpUrlGenerator: HttpUrlGenerator) {
-    super('courses', http, httpUrlGenerator);
+    super('Superhero', http, httpUrlGenerator);
   }
 
   override getAll(): Observable<Superhero[]> {

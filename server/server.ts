@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Application } from 'express';
-import { getAllHeros } from './get-courses.route';
+import { getAllHeros } from './get-superheros.route';
 import { getPower } from './get-power';
 
 const bodyParser = require('body-parser');

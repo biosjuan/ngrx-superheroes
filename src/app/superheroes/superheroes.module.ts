@@ -10,6 +10,7 @@ import { SuperheroesDataService } from './services/superheroes-data.service';
 import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 import { MaterialModule } from '../material/material.module';
 import { SuperheroPowerEntityService } from './services/superhero-power-entity.service';
+import { SuperheroPowerDataService } from './services/superhero-power-data.service';
 
 export const superherosRoutes: Routes = [
   {
@@ -31,13 +32,19 @@ export const superherosRoutes: Routes = [
     SuperheroesEntityService,
     SuperheroesDataService,
     SuperheroPowerEntityService,
+    SuperheroPowerDataService,
   ],
 })
 export class SuperherosModule {
   constructor(
     private entityDataService: EntityDataService,
-    private superheroesDataService: SuperheroesDataService
+    private superheroesDataService: SuperheroesDataService,
+    private superheroPowerDataService: SuperheroPowerDataService
   ) {
     entityDataService.registerService('Superhero', superheroesDataService);
+    entityDataService.registerService(
+      'SuperheroPower',
+      superheroPowerDataService
+    );
   }
 }

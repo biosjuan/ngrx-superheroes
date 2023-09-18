@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SuperheroesEntityService } from './services/superheroes-entity.service';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { Superhero, SuperheroPower } from './models';
 import { SuperheroPowerEntityService } from './services/superhero-power-entity.service';
 
