@@ -14,7 +14,7 @@ app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 
 app.route('/nc/superheroes').get(getAllHeros);
-app.route('/api/superheropower/:powerIds').get(getPower);
+app.route('/api/superheropowers').get(getPower);
 
 const httpServer: any = app.listen(3001, () => {
   console.log(
