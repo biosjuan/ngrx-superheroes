@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SpinnerComponent } from './spinner.component';
-import { MaterialModule } from '../material/material.module';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   imports: [CommonModule, MaterialModule],
@@ -9,4 +9,4 @@ import { CommonModule } from '@angular/common';
   declarations: [SpinnerComponent],
   providers: [],
 })
-export class UiModule {}
+export class SpinnerModule {}

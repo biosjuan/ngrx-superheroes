@@ -13,9 +13,8 @@ import { SuperheroPowerEntityService } from './services/superhero-power-entity.s
 import { SuperheroPowerDataService } from './services/superhero-power-data.service';
 import { SuperheroPowersComponent } from './superhero-powers/superhero-powers.component';
 import { superheroPowerResolver } from './services/superhero-power.resolvers';
-import { SpinnerComponent } from '../ui/spinner.component';
-import { UiModule } from '../ui/ui.module';
 import { SuperheroPowerListComponent } from './superhero-powers/superhero-power-list/superhero-power-list.component';
+import { SpinnerModule } from '../ui/spinner/spinner.module';
 
 export const superherosRoutes: Routes = [
   {
@@ -40,7 +39,7 @@ export const superherosRoutes: Routes = [
   imports: [
     CommonModule,
     MaterialModule,
-    UiModule,
+    SpinnerModule,
     RouterModule.forChild(superherosRoutes),
     EntityDataModule.forRoot(entityConfig),
   ],

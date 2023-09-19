@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SuperheroPower } from '../../models';
+import { SuperheroPowerEntityService } from '../../services/superhero-power-entity.service';
 
 @Component({
   selector: 'app-superhero-power-list',
@@ -16,7 +17,12 @@ export class SuperheroPowerListComponent {
     this.dataSource.data = value ?? [];
   }
 
-  onDelete(powerId: number): void {
-    console.log(powerId);
+  constructor(
+    private superheroPowerEntityService: SuperheroPowerEntityService
+  ) {}
+  onDelete(superheroPower: SuperheroPower): void {
+    this.superheroPowerEntityService
+      .delete(superheroPower)
+      .subscribe((res) => console.log(res));
   }
 }

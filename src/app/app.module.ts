@@ -11,8 +11,7 @@ import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { MaterialModule } from './material/material.module';
 import { LoadingIndicatorInterceptor } from './services/loading-indicator-interceptor.service';
-import { SpinnerComponent } from './ui/spinner.component';
-import { UiModule } from './ui/ui.module';
+import { SpinnerModule } from './ui/spinner/spinner.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +21,7 @@ import { UiModule } from './ui/ui.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    UiModule,
+    SpinnerModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
