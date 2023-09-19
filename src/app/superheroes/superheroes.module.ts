@@ -15,6 +15,8 @@ import { SuperheroPowersComponent } from './superhero-powers/superhero-powers.co
 import { superheroPowerResolver } from './services/superhero-power.resolvers';
 import { SuperheroPowerListComponent } from './superhero-powers/superhero-power-list/superhero-power-list.component';
 import { SpinnerModule } from '../ui/spinner/spinner.module';
+import { SuperheroPowerDialogComponent } from './superhero-powers/superhero-dialog/superhero-power-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export const superherosRoutes: Routes = [
   {
@@ -35,11 +37,13 @@ export const superherosRoutes: Routes = [
     SuperheroListComponent,
     SuperheroPowersComponent,
     SuperheroPowerListComponent,
+    SuperheroPowerDialogComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     SpinnerModule,
+    ReactiveFormsModule,
     RouterModule.forChild(superherosRoutes),
     EntityDataModule.forRoot(entityConfig),
   ],

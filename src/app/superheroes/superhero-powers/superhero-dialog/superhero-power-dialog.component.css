@@ -1,0 +1,39 @@
+/* Style the form container */
+.center-card {
+  width: 500px; /* Adjust the width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+/* Style the form fields */
+mat-form-field {
+  width: 100%;
+}
+
+/* Center the buttons horizontally */
+.center-actions {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 16px; /* Add spacing */
+}
+
+.center-title {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 16px; /* Add spacing */
+  margin-bottom: 10px;
+}
+
+/* Make the buttons have the same width */
+button {
+  flex: 1; /* Distribute available space equally */
+  margin: 0 8px; /* Add spacing between buttons */
+}
+
+

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SuperheroPower } from '../../models';
 import { SuperheroPowerEntityService } from '../../services/superhero-power-entity.service';
@@ -17,12 +17,23 @@ export class SuperheroPowerListComponent {
     this.dataSource.data = value ?? [];
   }
 
+  @Output() deleteSuperheroPower = new EventEmitter<SuperheroPower>();
+  @Output() editSuperheroPower = new EventEmitter<SuperheroPower>();
+  @Output() addSuperheroPower = new EventEmitter<void>();
+
   constructor(
     private superheroPowerEntityService: SuperheroPowerEntityService
   ) {}
+
   onDelete(superheroPower: SuperheroPower): void {
-    this.superheroPowerEntityService
-      .delete(superheroPower)
-      .subscribe((res) => console.log(res));
+    this.deleteSuperheroPower.emit(superheroPower);
+  }
+
+  onEdit(superheroPower: SuperheroPower): void {
+    this.editSuperheroPower.emit(superheroPower);
+  }
+
+  onAddPower(): void {
+    this.addSuperheroPower.emit();
   }
 }

@@ -65,3 +65,11 @@
 .action-button:hover {
   color: #333;
 }
+
+.action-cell {
+  text-align: left;
+}
+
+.action-button {
+  margin-left: 0; /* Adjust the margin as needed */
+}
