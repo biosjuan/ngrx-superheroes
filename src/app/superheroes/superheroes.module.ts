@@ -15,6 +15,7 @@ import { SuperheroPowersComponent } from './superhero-powers/superhero-powers.co
 import { superheroPowerResolver } from './services/superhero-power.resolvers';
 import { SpinnerComponent } from '../ui/spinner.component';
 import { UiModule } from '../ui/ui.module';
+import { SuperheroPowerListComponent } from './superhero-powers/superhero-power-list/superhero-power-list.component';
 
 export const superherosRoutes: Routes = [
   {
@@ -34,6 +35,7 @@ export const superherosRoutes: Routes = [
     SuperherosComponent,
     SuperheroListComponent,
     SuperheroPowersComponent,
+    SuperheroPowerListComponent,
   ],
   imports: [
     CommonModule,

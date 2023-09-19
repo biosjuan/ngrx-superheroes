@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.loading$ = this.loadingIndicatorService
-      .isLoading()
-      .pipe(tap((res) => console.log(res)));
+    this.loading$ = this.loadingIndicatorService.isLoading();
   }
 
   onHome(): void {

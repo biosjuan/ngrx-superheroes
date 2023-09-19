@@ -1,0 +1,67 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.viewport {
+  height: 400px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport:hover {
+  overflow-y: auto;
+  width: calc(100% + 3px); /* Add space for the scrollbar */
+}
+
+.viewport::-webkit-scrollbar {
+  width: 5px;
+}
+
+.viewport::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.center-card {
+  margin: auto;
+  margin-top: 16px;
+  max-width: 1000px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description-text {
+  font-weight: bold;
+}
+
+.add-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Increase button size */
+  transition: color 0.3s ease; /* Add a color transition */
+}
+
+.add-button:hover {
+  color: #0056b3; /* Change button color on hover */
+}
+
+.action-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #777;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.action-button:hover {
+  color: #333;
+}
