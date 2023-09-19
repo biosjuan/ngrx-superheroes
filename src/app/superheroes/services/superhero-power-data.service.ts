@@ -9,4 +9,8 @@ export class SuperheroPowerDataService extends DefaultDataService<SuperheroPower
   constructor(http: HttpClient, httpUrlGenerator: HttpUrlGenerator) {
     super('SuperheroPower', http, httpUrlGenerator);
   }
+
+  override getAll(): Observable<SuperheroPower[]> {
+    return this.http.get<SuperheroPower[]>('/api/superheropower/list');
+  }
 }

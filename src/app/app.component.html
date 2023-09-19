@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
   <!-- Add your menu items here -->
-  <button mat-button>Home</button>
-  <button mat-button>About</button>
-  <button mat-button>Contact</button>
+  <button mat-button (click)="onHome()">Home</button>
+  <button mat-button (click)="onSuperheroPowerList()">
+    Get Super Powers List
+  </button>
   <!-- Add more menu items as needed -->
 </mat-toolbar>
-<spinner *ngIf="loading$ | async"></spinner>
+<spinner [loading]="loading$ | async"></spinner>
 <router-outlet></router-outlet>

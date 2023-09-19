@@ -1,5 +1,6 @@
 <app-superhero-list
   [superheroes]="superheros$ | async"
-  [superheroPowersInput]="superheroPowers$ | async"
+  [superheroPowersInput]="selectedSuperheroPowers$ | async"
   (getPowers)="getPowers($event)"
 ></app-superhero-list>
+<spinner [loading]="isloading$ | async"></spinner>

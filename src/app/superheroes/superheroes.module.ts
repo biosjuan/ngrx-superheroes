@@ -11,6 +11,10 @@ import { SuperheroListComponent } from './superhero-list/superhero-list.componen
 import { MaterialModule } from '../material/material.module';
 import { SuperheroPowerEntityService } from './services/superhero-power-entity.service';
 import { SuperheroPowerDataService } from './services/superhero-power-data.service';
+import { SuperheroPowersComponent } from './superhero-powers/superhero-powers.component';
+import { superheroPowerResolver } from './services/superhero-power.resolvers';
+import { SpinnerComponent } from '../ui/spinner.component';
+import { UiModule } from '../ui/ui.module';
 
 export const superherosRoutes: Routes = [
   {
@@ -18,13 +22,23 @@ export const superherosRoutes: Routes = [
     resolve: { superheroes: superherosResolver },
     component: SuperherosComponent,
   },
+  {
+    path: 'superhero-powers',
+    resolve: { superheroPowers: superheroPowerResolver },
+    component: SuperheroPowersComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [SuperherosComponent, SuperheroListComponent],
+  declarations: [
+    SuperherosComponent,
+    SuperheroListComponent,
+    SuperheroPowersComponent,
+  ],
   imports: [
     CommonModule,
     MaterialModule,
+    UiModule,
     RouterModule.forChild(superherosRoutes),
     EntityDataModule.forRoot(entityConfig),
   ],

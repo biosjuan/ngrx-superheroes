@@ -3,6 +3,7 @@ import { SuperheroesEntityService } from './services/superheroes-entity.service'
 import { Observable, map, of, switchMap } from 'rxjs';
 import { Superhero, SuperheroPower } from './models';
 import { SuperheroPowerEntityService } from './services/superhero-power-entity.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-superheros',
@@ -12,7 +13,9 @@ import { SuperheroPowerEntityService } from './services/superhero-power-entity.s
 })
 export class SuperherosComponent implements OnInit {
   superheros$: Observable<Superhero[]>;
-  superheroPowers$: Observable<SuperheroPower[]>;
+  selectedSuperheroPowers$: Observable<SuperheroPower[]>;
+  loaded$: any;
+  isloading$: Observable<boolean>;
 
   constructor(
     private superherosEntityService: SuperheroesEntityService,
@@ -34,12 +37,13 @@ export class SuperherosComponent implements OnInit {
       )
     );
 
-    this.superheroPowers$ = powersInStore$.pipe(
+    this.selectedSuperheroPowers$ = powersInStore$.pipe(
       // If data is already in the store, return it; otherwise, make the HTTP request
       switchMap((powersInStore) => {
         if (powersInStore.length > 0) {
           return of(powersInStore);
         } else {
+          this.isloading$ = this.superheroPowerEntityService.loading$;
           return this.superheroPowerEntityService.getWithQuery({
             powerIds: powerIdsQueryParam,
           });

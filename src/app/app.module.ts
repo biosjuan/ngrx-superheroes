@@ -12,15 +12,17 @@ import { EffectsModule } from '@ngrx/effects';
 import { MaterialModule } from './material/material.module';
 import { LoadingIndicatorInterceptor } from './services/loading-indicator-interceptor.service';
 import { SpinnerComponent } from './ui/spinner.component';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
-  declarations: [AppComponent, SpinnerComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    UiModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

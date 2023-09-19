@@ -20,3 +20,11 @@ export function getPower(req: Request, res: Response) {
     res.status(200).json(superpowers);
   }, 1000);
 }
+
+export function getPowerList(req: Request, res: Response) {
+  console.log('Retrieving superheroe powers...');
+  const superpowers = Object.values(SUPERHERO_POWERS);
+  setTimeout(() => {
+    res.status(200).json(superpowers);
+  }, 1000);
+}

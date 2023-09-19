@@ -17,7 +17,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class SuperheroListComponent {
   dataSource = new MatTableDataSource<Superhero>([]);
   superheroPowers: string[];
-  superheroId: number;
+  superheroId: number | null;
+  displayedColumns: string[] = ['name', 'alias', 'team', 'universe', 'powers'];
   @Input() set superheroes(value: Superhero[] | null) {
     this.dataSource.data = value ?? [];
   }
@@ -27,10 +28,13 @@ export class SuperheroListComponent {
   }
 
   @Output() getPowers = new EventEmitter<number[]>();
-  displayedColumns: string[] = ['name', 'alias', 'team', 'universe', 'powers'];
 
   onGetPowers(powers: number[], id: number): void {
     this.getPowers.emit(powers);
-    this.superheroId = id;
+    if (this.superheroId === id) {
+      this.superheroId = null;
+    } else {
+      this.superheroId = id;
+    }
   }
 }

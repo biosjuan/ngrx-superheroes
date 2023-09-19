@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { Application } from 'express';
 import { getAllHeros } from './get-superheros.route';
-import { getPower } from './get-power';
+import { getPower, getPowerList } from './get-power';
 
 const bodyParser = require('body-parser');
 
@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 app.route('/nc/superheroes').get(getAllHeros);
 app.route('/api/superheropowers').get(getPower);
+app.route('/api/superheropower/list').get(getPowerList);
 
 const httpServer: any = app.listen(3001, () => {
   console.log(
