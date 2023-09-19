@@ -13,6 +13,6 @@ export const superheroPowerResolver: ResolveFn<any> = (
   state: RouterStateSnapshot
 ): Observable<boolean> => {
   const sperheroPowerEntityService = inject(SuperheroPowerEntityService);
-  sperheroPowerEntityService.getAll();
+  sperheroPowerEntityService.getAllSuperheroPowers();
   return of(true);
 };

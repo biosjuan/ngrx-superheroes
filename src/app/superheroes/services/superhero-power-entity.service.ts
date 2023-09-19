@@ -12,19 +12,19 @@ interface tem {
 
 @Injectable()
 export class SuperheroPowerEntityService extends EntityCollectionServiceBase<SuperheroPower> {
+  private getAllCalled = false;
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('SuperheroPower', serviceElementsFactory);
   }
 
-  private allLoaded = false;
-
-  // Define a method to set superheroPowerIds
-  setAllLoaded(): void {
-    this.allLoaded = true;
+  getAllSuperheroPowers(): void {
+    if (!this.getAllCalled) {
+      super.getAll();
+      this.getAllCalled = true;
+    }
   }
 
-  // Define a method to get superheroPowerIds
-  getAllLoaded(): boolean {
-    return this.allLoaded;
+  resetGetAllFlag(): void {
+    this.getAllCalled = false;
   }
 }
