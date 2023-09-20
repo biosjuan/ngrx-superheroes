@@ -1,7 +1,13 @@
 <mat-toolbar color="primary">
   <!-- Add your menu items here -->
-  <button mat-button (click)="onHome()">Heroes List</button>
-  <button mat-button (click)="onSuperheroPowerList()">
+  <button mat-button (click)="onHome()" aria-label="Heroes List">
+    Heroes List
+  </button>
+  <button
+    mat-button
+    (click)="onSuperheroPowerList()"
+    aria-label="Get Super Powers List"
+  >
     Get Super Powers List
   </button>
   <!-- Add more menu items as needed -->
